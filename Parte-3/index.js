@@ -6,7 +6,7 @@ function commentForm() {
         event.preventDefault();
 
 
-        let name = $(form).children('label').children('.userName')[0].innerText;
+        let name = $(form).children('label').children('.userName').attr('value');
         let comment = $(form).children('label').children('#userComment').text();
 
         console.log(name);
@@ -14,10 +14,9 @@ function commentForm() {
 
         
         if( name != undefined && comment != "") {
-            
+            $('.seccionComments').append(`<div><h3>`+ name + `</h3><p>` + comment + `</p></div>`);
         }
         
-        $('.seccionComments').append(`<div><h3>`+ name + `</h3><p>` + comment + `</p></div>`);
     })
 }
 
